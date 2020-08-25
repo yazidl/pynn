@@ -1,12 +1,16 @@
 from neuralnetwork import *
-import numpy as np
 
-X = np.array([[5,3,2],[45,2,31],[4,5,16],[1,1,6],[44,56,0]])
-y = np.array([0,1])
-n_input = X.shape[1]
-print(n_input)
 
-nn = NeuralNetwork([n_input, 3, 2])
+#X = np.array([[1,3],[2,5],[8,7]])
+#y = np.array([1,0,0])
+
+X = np.loadtxt('data/X.csv', delimiter=',')
+y = np.loadtxt('data/y.csv', delimiter=',', dtype=int)
+
+layers = [Layer(data=X),
+          Layer(25, activation='sigmoid'),
+          Layer(10, activation='sigmoid')]
+
+nn = NeuralNetwork(layers)
 nn.initRandomWeights()
 nn.train(X, y)
-#nn.summary()

@@ -1,2 +1,2 @@
 # README
-PyNN is an implementation of a sequential Neural Network with Python and NumPy
+PyNN is an implementation of a classfication Neural Network with Python and NumPy
